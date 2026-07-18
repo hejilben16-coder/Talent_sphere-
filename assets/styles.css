@@ -1,0 +1,327 @@
+/* ============================================================
+   Talent Sphere Elevate — LinkedIn-themed enterprise UI
+   Milestone 1 custom stylesheet
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* LinkedIn brand */
+  --ls-primary: #0A66C2;          /* LinkedIn blue */
+  --ls-primary-hover: #004182;    /* darker */
+  --ls-primary-bright: #378FE9;   /* lighter accent */
+  --ls-gradient: linear-gradient(135deg, #378FE9 0%, #0A66C2 55%, #004182 100%);
+  --ls-gradient-hero: linear-gradient(120deg, #004182 0%, #0A66C2 50%, #378FE9 100%);
+
+  /* Surfaces */
+  --ls-bg: #F3F2EF;               /* LinkedIn page background */
+  --ls-surface: #FFFFFF;          /* cards */
+  --ls-border: #E0DFDC;
+
+  /* Text */
+  --ls-text: rgba(0, 0, 0, 0.90);
+  --ls-text-secondary: rgba(0, 0, 0, 0.60);
+
+  /* Semantic */
+  --ls-success: #057642;          /* LinkedIn green */
+  --ls-warning: #B78103;
+  --ls-danger:  #CC1016;
+
+  /* Effects */
+  --ls-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --ls-shadow-hover: 0 6px 18px rgba(10, 102, 194, 0.20);
+  --ls-radius: 12px;
+  --ls-radius-pill: 24px;
+}
+
+/* ---------- Base typography & layout ---------- */
+html, body, [class*="css"], .stApp {
+  font-family: "Inter", system-ui, "Segoe UI", sans-serif;
+  color: var(--ls-text);
+}
+
+.stApp {
+  background: var(--ls-bg);
+}
+
+/* Comfortable reading width, avoid edge-to-edge sprawl */
+.block-container {
+  max-width: 1100px;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ls-text);
+}
+
+/* ---------- Hero header ---------- */
+.ts-hero {
+  background: var(--ls-gradient-hero);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 24px rgba(10, 102, 194, 0.28);
+  margin-bottom: 1.75rem;
+}
+.ts-hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.ts-hero-subtitle {
+  margin-top: 0.5rem;
+  font-size: 1.02rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ---------- Section headers ---------- */
+.ts-section {
+  margin: 0.5rem 0 1.25rem 0;
+  padding-left: 0.9rem;
+  border-left: 4px solid var(--ls-primary);
+}
+.ts-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.ts-section-subtitle {
+  margin-top: 0.15rem;
+  font-size: 0.95rem;
+  color: var(--ls-text-secondary);
+}
+
+/* ---------- Cards ---------- */
+.ts-card {
+  background: var(--ls-surface);
+  border: 1px solid var(--ls-border);
+  border-radius: var(--ls-radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--ls-shadow);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  margin-bottom: 1rem;
+}
+.ts-card:hover {
+  box-shadow: var(--ls-shadow-hover);
+  transform: translateY(-2px);
+}
+.ts-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ts-card-icon {
+  font-size: 1.2rem;
+}
+.ts-card-body {
+  font-size: 0.95rem;
+  color: var(--ls-text-secondary);
+  line-height: 1.5;
+}
+
+/* ---------- Metric tiles ---------- */
+.ts-metric {
+  background: var(--ls-surface);
+  border: 1px solid var(--ls-border);
+  border-left: 5px solid var(--ls-primary);
+  border-radius: var(--ls-radius);
+  padding: 1.1rem 1.35rem;
+  box-shadow: var(--ls-shadow);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.ts-metric:hover {
+  box-shadow: var(--ls-shadow-hover);
+  transform: translateY(-2px);
+}
+.ts-metric-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--ls-primary);
+  line-height: 1.1;
+}
+.ts-metric-label {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ls-text-secondary);
+}
+
+/* ---------- Score badges ---------- */
+.ts-badge {
+  display: inline-block;
+  padding: 0.15rem 0.7rem;
+  border-radius: var(--ls-radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+.ts-badge-high { background: var(--ls-success); }
+.ts-badge-mid  { background: var(--ls-primary); }
+.ts-badge-low  { background: #6b7280; }
+
+/* ---------- Search result cards ---------- */
+.ts-result-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.ts-result-source {
+  font-weight: 600;
+  color: var(--ls-primary-hover);
+}
+.ts-result-page {
+  font-size: 0.85rem;
+  color: var(--ls-text-secondary);
+  background: var(--ls-bg);
+  padding: 0.1rem 0.6rem;
+  border-radius: var(--ls-radius-pill);
+}
+.ts-result-text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ls-text);
+}
+
+/* ---------- Empty state ---------- */
+.ts-empty {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+.ts-empty-icon { font-size: 2.4rem; }
+.ts-empty-title {
+  margin-top: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.ts-empty-body {
+  margin-top: 0.3rem;
+  color: var(--ls-text-secondary);
+}
+
+/* ---------- Primary gradient buttons ---------- */
+.stButton > button,
+.stDownloadButton > button {
+  background: var(--ls-gradient);
+  color: #fff;
+  border: none;
+  border-radius: var(--ls-radius-pill);
+  padding: 0.55rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 6px rgba(10, 102, 194, 0.25);
+  transition: all 0.2s ease;
+}
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+  background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
+  box-shadow: var(--ls-shadow-hover);
+  transform: translateY(-1px);
+  color: #fff;
+}
+.stButton > button:active { transform: translateY(0); }
+.stButton > button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.35);
+}
+.stButton > button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- Secondary buttons ---------- */
+.stButton > button[kind="secondary"] {
+  background: var(--ls-surface);
+  color: var(--ls-primary);
+  border: 1.5px solid var(--ls-primary);
+  box-shadow: none;
+}
+.stButton > button[kind="secondary"]:hover {
+  background: rgba(10, 102, 194, 0.08);
+  color: var(--ls-primary-hover);
+  border-color: var(--ls-primary-hover);
+  box-shadow: none;
+}
+
+/* Destructive secondary (e.g. Reset index) — opt-in via a wrapper */
+.ts-danger .stButton > button[kind="secondary"] {
+  color: var(--ls-danger);
+  border-color: var(--ls-danger);
+}
+.ts-danger .stButton > button[kind="secondary"]:hover {
+  background: rgba(204, 16, 22, 0.08);
+  color: var(--ls-danger);
+  border-color: var(--ls-danger);
+}
+
+/* ---------- File uploader drop-zone ---------- */
+[data-testid="stFileUploader"] {
+  border: 2px dashed var(--ls-primary);
+  border-radius: var(--ls-radius);
+  background: var(--ls-bg);
+  padding: 0.75rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+[data-testid="stFileUploader"]:hover {
+  border-color: var(--ls-primary-hover);
+  background: rgba(10, 102, 194, 0.04);
+}
+[data-testid="stFileUploaderDropzone"] {
+  background: transparent;
+}
+
+/* ---------- Inputs ---------- */
+.stTextInput input,
+.stTextArea textarea {
+  border-radius: var(--ls-radius);
+  border: 1px solid var(--ls-border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+  border-color: var(--ls-primary);
+  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.18);
+  outline: none;
+}
+
+/* ---------- Sliders ---------- */
+.stSlider [data-baseweb="slider"] div[role="slider"] {
+  background: var(--ls-primary);
+}
+
+/* ---------- Tables / dataframes ---------- */
+[data-testid="stDataFrame"] {
+  border: 1px solid var(--ls-border);
+  border-radius: var(--ls-radius);
+  overflow: hidden;
+}
+[data-testid="stDataFrame"] thead tr th {
+  background: var(--ls-bg);
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] {
+  background: var(--ls-surface);
+  border-right: 1px solid var(--ls-border);
+}
+[data-testid="stSidebar"] .block-container {
+  padding-top: 1.5rem;
+}
+
+/* ---------- Progress bar ---------- */
+.stProgress > div > div > div > div {
+  background: var(--ls-gradient);
+}

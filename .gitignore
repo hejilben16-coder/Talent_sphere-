@@ -1,0 +1,13 @@
+.env
+.venv/
+talent/
+chroma_db/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env*
+uploads/
+uploaded_pdfs/
+
